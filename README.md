@@ -18,14 +18,14 @@ bin/console pimcore:bundle:enable HamariCodeEditorBundle
 
 #### Features
 
-Edit server files:
+##### Edit server files:
 
 ![Screen](./doc/img/server-files.png)
 
-Jump to Controller Actions and Template code directly from the Documents page:
+##### Jump to Controller Actions and Template code directly from the Documents page:
 
 ![Screen](./doc/img/document-code-jump.png)
 
-Includes Pimcore twig snippets for fast code editing:
+##### Includes Pimcore twig snippets for fast code editing:
 
 ![Screen](./doc/img/twig.jpg)
