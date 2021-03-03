@@ -14,10 +14,11 @@
 pimcore.registerNS("pimcore.settings.fileexplorer.file");
 pimcore.settings.fileexplorer.file = Class.create({
 
-    initialize: function (path, explorer, find='') {
+    initialize: function (path, explorer, find='', altPath='') {
         this.path = path;
         this.explorer = explorer;
         this.find = find;
+        this.altPath = altPath;
         this.loadFileContents(path);
     },
 
@@ -85,6 +86,13 @@ pimcore.settings.fileexplorer.file = Class.create({
             }
             this.explorer.editorPanel.setActiveTab(this.editor);
             this.explorer.editorPanel.updateLayout();
+        }
+        else if(response.success == false) {
+            if (this.altPath != '') {
+                this.path = this.altPath;
+                this.altPath = '';
+                this.loadFileContents(this.path);
+            }
         }
     },
 

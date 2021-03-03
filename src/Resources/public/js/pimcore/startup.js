@@ -49,11 +49,17 @@ pimcore.plugin.HamariCodeEditorBundle = Class.create(pimcore.plugin.admin, {
                                 pimcore.globalmanager.add("fileexplorer", explorer);
                             }
 
+                            var controllerPath = '';
                             controller = controller.charAt(0).toUpperCase() + controller.slice(1);
-                            var controllerPath = '/fileexplorer/src/AppBundle/Controller/'+controller+'Controller.php';
+                            controllerPath = '/fileexplorer/src/AppBundle/Controller/'+controller+'Controller.php';
+                            
+                            var controllerAltPath = '';
+                            controller = controller.toLowerCase();
+                            controllerAltPath = '/fileexplorer/src/AppBundle/Controller/'+controller+'Controller.php';
+
                             var searchTerm = 'public function '+action+'Action';
 
-                            explorer.openFile(controllerPath, searchTerm);
+                            explorer.openFile(controllerPath, searchTerm, controllerAltPath);
 
                         }.bind(this)
                     },{
@@ -73,15 +79,19 @@ pimcore.plugin.HamariCodeEditorBundle = Class.create(pimcore.plugin.admin, {
 
                             var template = document.data.template;
                             var templatePath = '';
+                            var templateAltPath = '';
                             if ((template == null) || (template == '')) {
                                 controller = controller.toLowerCase();
                                 templatePath = '/fileexplorer/app/Resources/views/'+controller+'/'+action+'.html.twig';
+                                
+                                controller = controller.charAt(0).toUpperCase() + controller.slice(1);
+                                templateAltPath = '/fileexplorer/app/Resources/views/'+controller+'/'+action+'.html.twig';
                             }
                             else{
                                 templatePath = '/fileexplorer/app/Resources/views/'+template;
                             }
 
-                            explorer.openFile(templatePath, '');
+                            explorer.openFile(templatePath, '', templateAltPath);
 
                         }.bind(this)
                     }]

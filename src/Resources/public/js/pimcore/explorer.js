@@ -197,7 +197,7 @@ pimcore.settings.fileexplorer.explorer = Class.create({
                         method: 'PUT',
                         success: function (node, response) {
                             if (this.openfiles[node.id]) {
-                                this.openfiles[node.id].updatePath(node.parentNode.id + value);
+                                this.openfiles[node.id].updatePath(node.parentNode.id + value, '');
                             }
                             this.treePanel.getStore().load({
                                 node: node.parentNode,
@@ -248,12 +248,12 @@ pimcore.settings.fileexplorer.explorer = Class.create({
         return this.editorPanel;
     },
 
-    openFile: function (path, find='') {
+    openFile: function (path, find='', altPath='') {
 
         if (typeof this.openfiles[path] != "undefined") {
             this.openfiles[path].activate(find);
         } else {
-            this.openfiles[path] = new pimcore.settings.fileexplorer.file(path, this, find);
+            this.openfiles[path] = new pimcore.settings.fileexplorer.file(path, this, find, altPath);
         }
     },
 
