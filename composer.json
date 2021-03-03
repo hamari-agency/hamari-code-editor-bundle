@@ -1,0 +1,34 @@
+{
+  "name": "hamari-agency/pimcore-code-editor-bundle",
+  "description": "Edit PHP, Twig, JS, CSS code from within the Pimcore admin page",
+  "type": "pimcore-bundle",
+  "license": "GPL-3.0+",
+  "keywords": [
+    "pimcore",
+    "code editor",
+    "monaco",
+    "ide"
+  ],
+  "authors": [
+    {
+      "name": "Ayoob G",
+      "email": "ayoob@hamari.agency",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "HamariCodeEditorBundle\\": "src/"
+    }
+  },
+  "extra": {
+    "pimcore": {
+      "bundles": [
+        "HamariCodeEditorBundle\\HamariCodeEditorBundle"
+      ]
+    }
+  },
+  "require": {
+    "pimcore/pimcore": "^6"
+  }
+}

@@ -1,0 +1,3 @@
+hamari_code_editor_homepage:
+    path:     /hamari_code_editor
+    defaults: { _controller: HamariCodeEditorBundle:Default:index }
