@@ -22,7 +22,7 @@ Edit server files:
 
 ![Screen](./doc/img/server-files.png)
 
-Jump to Controller Actions and Templates code directly from the Documents page:
+Jump to Controller Actions and Template code directly from the Documents page:
 
 ![Screen](./doc/img/document-code-jump.png)
 
